@@ -1,0 +1,81 @@
+body {
+  font-family: "Abril Fatface", cursive;
+}
+
+.title {
+  color: white;
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+}
+
+h2 {
+  color: black;
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+}
+
+.jumbotron {
+  background-image: linear-gradient(
+    to right top,
+    #034fc0,
+    #0088ed,
+    #00b4d1,
+    #00d682,
+    #fffb00
+  );
+}
+
+form {
+  position: absolute;
+}
+
+.weather-row {
+  top: 680px;
+  left: 200px;
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
+
+.list-group {
+  margin-left: 35px;
+  list-style: none;
+}
+
+h5 {
+  margin-left: 35px;
+}
+
+input[type="text"] {
+  height: 50px;
+  width: 30px;
+  border: none;
+  background: seashell;
+}
+
+.container {
+  display: inline-block;
+  position: fixed;
+  left: 350px;
+  bottom: 250px;
+}
+
+.CityName {
+  font-size: 2rem;
+}
+
+.row {
+  max-width: 25%;
+}
+
+.border {
+  width: 900px;
+  margin-left: 600px;
+}
+
+.bodyInfo {
+  justify-content: left;
+}
