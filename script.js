@@ -3,7 +3,7 @@ var button = document.querySelector(".btn");
 var inputValue = document.querySelector(".form-control");
 
 function handleSearch() {
-  //Then i get the value that the entered into the search input
+  //Then I get the value that the entered into the search input
   makeWeatherRequest(search);
 }
 const searchbox = document.querySelector(".search-box");
@@ -28,19 +28,24 @@ function makeWeatherRequest(city) {
     console.log(response);
     $(".current").html(`
     <div class="temp">${response.main.temp}<span class="degree">°F</span></div>
-          <div class="weather">Sunny</div>
-          <div class="hi-low">High: 13<span class="hi">°F</span> / Low: 6<span class="hi">°F</span></div>
-          <div class="humidity">Humidity: 75<span class="hi">%</span></div>
-          <div class="wind-speed">Wind Speed: 15<span class="hi">%</span></div>
-          <div class="uv-index">UVINDEX</div>
+          <div class="weather">${response.weather[0].main}</div>
+          <div class="hi-low">High: ${response.main.temp_max}<span class="hi">°F</span> / Low: ${response.main.temp_min}<span class="hi">°F</span></div>
+          <div class="humidity"> Humidity: ${response.main.humidity}<span class="hi">%</span></div>
+          <div class="wind-speed">Wind Speed: ${response.wind.speed}<span class="hi">%</span></div>
+          <div class="uv-index">UVINDEX: ${response.main.humidity}</div>
           `);
     //Start rendering data to the html
     //THEN get the lat and lng out of the response object
     //NEXT call makeOneCallRequest and pass in the lat and lng
   });
+
 }
 
+
 function makeOneCallRequest(lat, lng) {
+
+  var lat = cityForecast.coord.lat
+  var lng = cityForecast.coord.lon
   //Next we need to build the URL fot the first api request
   //https://api.openweathermap.org/data/2.5/weather?q=[USER_INPUT]&appid=b9b4b4e352e630b8fffa863c640dbb65
 
