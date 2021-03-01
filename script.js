@@ -41,17 +41,23 @@ function makeWeatherRequest(city) {
 
 }
 
+// function weekForecast(){
+//  let queryUrl = "api.openweathermap.org/data/2.5/forecast?q="+ city + "&appid=b9b4b4e352e630b8fffa863c640dbb65"
 
-function makeOneCallRequest(lat, lng) {
+// $.get(queryUrl, function (response) {
+//   console.log(response)
+//   $(".current").html(`    
+//   <div class="row">
+//   <h2>5-Day Forecast</h2>
+// </div>
+// <div class="row">
+//   <div class="weekday"></div>
+//   <div class="weekday"></div>
+//   <div class="weekday"></div>
+//   <div class="weekday"></div>
+//   <div class="weekday"></div>
+// </div>`);
+// })
 
-  var lat = cityForecast.coord.lat
-  var lng = cityForecast.coord.lon
-  //Next we need to build the URL fot the first api request
-  //https://api.openweathermap.org/data/2.5/weather?q=[USER_INPUT]&appid=b9b4b4e352e630b8fffa863c640dbb65
+// }
 
-  //NEXT, make the request to the URL with ajax
-
-  $.ajax(queryUrl).then(function (response) {
-    //Finish rendering data to the html
-  });
-}

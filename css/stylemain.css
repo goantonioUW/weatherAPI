@@ -6,22 +6,19 @@
 
 body {
   background-image: url(../images/weatherbg.jpeg);
-  background-size: cover;
+  background-size: auto;
   background-position: top center;
   font-family: "Comfortaa", cursive;
 }
 
-.app-wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+header {
+  display: inline-block;
+  padding: 50px 15px 15px;
+  text-align: center;
 }
 
-header {
-  display: flex;
-  justify-content: center;
+.search-box {
   align-items: center;
-  padding: 50px 15px 15px;
 }
 
 header input {
