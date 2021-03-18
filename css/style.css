@@ -7,16 +7,17 @@
 /* ===================mainConatiner========================== */
 
 .container {
+    justify-content: center;
     width: 1300px;
+    display: inline-flex;
 }
 
 
 /*====================searchContainer=========================*/
 
 .searchContainer {
-    margin-top: 0%;
+    margin: auto;
     position: relative;
-    display: inline-block;
     width: 300px;
     height: 400px;
     background-color: lightslategrey;
@@ -27,9 +28,8 @@
 /*====================weatherContainer=========================*/
 
 .weatherContainer {
+    margin: auto;
     position: relative;
-    display: inline-flex;
-    margin-top: 10px;
     background-color: rgba(248, 248, 255, 0.637);
     width: 900px;
     height: 400px;
@@ -39,6 +39,7 @@
 
 /*====================dateContainer=========================*/
 .dateContainer{
+    margin: auto;
     position: relative;
     display: inline-table;
 }

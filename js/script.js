@@ -9,6 +9,8 @@ function handleSearch() {
   makeWeatherRequest(search);
 }
 const searchbox = document.querySelector(".search-box");
+const searchButton = document.querySelector(".searchButton");
+
 searchbox.addEventListener("keypress", setQuery);
 function setQuery(evt) {
   if (evt.keyCode == 13) {
@@ -17,7 +19,29 @@ function setQuery(evt) {
     makeWeatherRequest(city);
     
   }
-}
+};
+
+searchButton.addEventListener("click", setQuery);
+function setQuery(evt) {
+  if (evt.keyCode == 13) {
+    var city = $(".search-box").val();
+
+    makeWeatherRequest(city);
+    
+  }
+};
+
+searchButton.onclick = function (city) {
+    const key = inpKey.value;
+    if (key) {
+        localStorage.setItem(key, city.name);
+        location.reload();
+    }
+    // console.log(key)
+};
+
+
+
 
 // get the current date and time 
 document.getElementById("date").innerHTML = date;
@@ -63,43 +87,43 @@ function getForcast(lat, lon) {
         $(".forcast").html(`
 
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${response.list[0].dt_txt} </div>
+            <div class="card-header">${response.list[3].dt_txt} </div>
             <div class="card-body">
-                <p class="card-text">Humidity:${response.list[0].main.humidity}</p>
-                <p class="card-text">Temp:${response.list[0].main.temp}</p>
-                <p class="card-text">${response.list[0].weather[0].main}</p>
+                <p class="card-text">Humidity:${response.list[3].main.humidity}</p>
+                <p class="card-text">Temp:${response.list[3].main.temp}</p>
+                <p class="card-text">${response.list[3].weather[0].main}</p>
             </div>
         </div>
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${response.list[12].dt_txt}</div>
+            <div class="card-header">${response.list[14].dt_txt}</div>
             <div class="card-body">
-                <p class="card-text">Humidity:${response.list[12].main.humidity}</p>
-                <p class="card-text">Temp:${response.list[12].main.temp}</p>
-                <p class="card-text">${response.list[12].weather[0].main}</p>
+                <p class="card-text">Humidity:${response.list[14].main.humidity}</p>
+                <p class="card-text">Temp:${response.list[14].main.temp}</p>
+                <p class="card-text">${response.list[14].weather[0].main}</p>
             </div>
         </div>
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${response.list[18].dt_txt}</div>
+            <div class="card-header">${response.list[22].dt_txt}</div>
             <div class="card-body">
-                <p class="card-text">Humidity:${response.list[18].main.humidity}</p>
-                <p class="card-text">Temp:${response.list[18].main.temp}</p>
-                <p class="card-text">${response.list[18].weather[0].main}</p>
+                <p class="card-text">Humidity:${response.list[22].main.humidity}</p>
+                <p class="card-text">Temp:${response.list[22].main.temp}</p>
+                <p class="card-text">${response.list[22].weather[0].main}</p>
             </div>
         </div>
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${response.list[24].dt_txt}</div>
+            <div class="card-header">${response.list[28].dt_txt}</div>
             <div class="card-body">
-                <p class="card-text">Humidity:${response.list[24].main.humidity}</p>
-                <p class="card-text">Temp:${response.list[24].main.temp}</p>
-                <p class="card-text">${response.list[24].weather[0].main}</p>
+                <p class="card-text">Humidity:${response.list[28].main.humidity}</p>
+                <p class="card-text">Temp:${response.list[28].main.temp}</p>
+                <p class="card-text">${response.list[28].weather[0].main}</p>
             </div>
         </div>
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">${response.list[34].dt_txt}</div>
+            <div class="card-header">${response.list[38].dt_txt}</div>
             <div class="card-body">
-                <p class="card-text">Humidity:${response.list[34].main.humidity}</p>
-                <p class="card-text">Temp:${response.list[34].main.temp}</p>
-                <p class="card-text">${response.list[34].weather[0].main}</p>
+                <p class="card-text">Humidity:${response.list[38].main.humidity}</p>
+                <p class="card-text">Temp:${response.list[38].main.temp}</p>
+                <p class="card-text">${response.list[38].weather[0].main}</p>
             </div>
         </div>
 
@@ -110,3 +134,20 @@ function getForcast(lat, lon) {
 
 // Uv function 
 
+//onload populate last searched results
+//onload display last searched city and weather
+
+
+//Using local storage to save searches
+const inpKey = document.getElementById("inpKey");
+const searchBtn = document.getElementById("searchBtn");
+const searchResults = document.getElementById("searchResults");
+
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    localStorage.getItem(key);
+    searchResults.innerHTML += `${key}<br />`
+
+
+}
