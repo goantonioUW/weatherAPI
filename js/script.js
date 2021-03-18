@@ -48,7 +48,7 @@ document.getElementById("date").innerHTML = date;
 
 function makeWeatherRequest(city) {
   //Next we need to build the URL fot the first api request
-  var queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=b9b4b4e352e630b8fffa863c640dbb65";
+  var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=b9b4b4e352e630b8fffa863c640dbb65";
 
   //NEXT, make the request to the URL with ajax
 
@@ -76,7 +76,7 @@ function getForcast(lat, lon) {
 
 
     //============================================TEST QUERYURL=================================================================//
-    var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=367fe79e97e40c475673bac6ad6a00fa";
+    var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=367fe79e97e40c475673bac6ad6a00fa";
     //============================================TEST QUERYURL=================================================================//
 
 
