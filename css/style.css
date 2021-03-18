@@ -4,11 +4,19 @@
     color: whitesmoke;
 }
 
+.navText {
+    position: relative;
+    margin: auto;
+}
+
 /* ===================mainConatiner========================== */
 
 .container {
-    justify-content: center;
-    width: 1300px;
+    top: 50px;
+    left: 200px;
+    position: relative;
+    margin: auto;
+    width: 100vw;
     display: inline-flex;
 }
 
@@ -52,6 +60,12 @@
 
 .card {
     display: inline-table;
+}
+
+.forcastContainer {
+    top: 20px;
+    position: relative;
+    margin: auto;
 }
 
 /*====================footer========================*/
