@@ -15,7 +15,7 @@ function setQuery(evt) {
     var city = $(".search-box").val();
 
     makeWeatherRequest(city);
-    getForcast();
+    
   }
 }
 
@@ -29,7 +29,10 @@ function makeWeatherRequest(city) {
   //NEXT, make the request to the URL with ajax
 
   $.get(queryUrl, function (response) {
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;    
 
+    getForcast(lat, lon);
     console.log(response);
     $(".current").html(`
     <h1>
@@ -49,7 +52,7 @@ function getForcast(lat, lon) {
 
 
     //============================================TEST QUERYURL=================================================================//
-    var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=367fe79e97e40c475673bac6ad6a00fa";
+    var queryUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=367fe79e97e40c475673bac6ad6a00fa";
     //============================================TEST QUERYURL=================================================================//
 
 
@@ -104,4 +107,6 @@ function getForcast(lat, lon) {
         `)
     })
 }
+
+// Uv function 
 
