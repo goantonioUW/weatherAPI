@@ -64,10 +64,10 @@ function makeWeatherRequest(city) {
     getForcast(lat, lon);
     console.log(response);
 
-     $.get("http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=b9b4b4e352e630b8fffa863c640dbb65", function (uvRes) {
+     $.get("https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=b9b4b4e352e630b8fffa863c640dbb65", function (uvRes) {
     console.log(uvRes)
         var iconcode = response.weather[0].icon
-         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+         var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
      $(".current").html(`
         <h1>
               <div class="temp">Current Tempurature in ${response.name}: ${response.main.temp}<span class="degree">°F</span> <img src=${iconurl} /> </div>
